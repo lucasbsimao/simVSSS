@@ -694,12 +694,8 @@ void	btRaycastVehicle::updateFriction(btScalar	timeStep)
                         centerMassAngY = -centerMassAngY;
                 }
             }
-
             m_absCenterMassAngVel = btVector3(m_chassisBody->getAngularVelocity().getX(),0,m_chassisBody->getAngularVelocity().getZ())+getUpVector()*centerMassAngY;// btVector3(m_chassisBody->getAngularVelocity().getX(),centerMassAngY,m_chassisBody->getAngularVelocity().getZ());
-
             m_chassisBody->setAngularVelocity(m_absCenterMassAngVel);
-
-            debugDrawProperties();
 		}
 }
 
@@ -783,12 +779,12 @@ void btRaycastVehicle::debugDrawProperties()
     btTransform chassisTrans = getChassisWorldTransform();
     btVector3 centerMass = m_chassisBody->getCenterOfMassPosition();
     btVector3 side = m_centripetalVelocity.normalized();
-
+	
     btVector3 angUnit = debugLinearVelocity[1].normalized();
-
     glPushMatrix();
         glTranslatef(centerMass.getX(),centerMass.getY(),centerMass.getZ());
     glPopMatrix();
+
 }
 
 

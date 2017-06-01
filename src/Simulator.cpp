@@ -206,7 +206,6 @@ void Simulator::calcRelativeWorld(vector<RobotStrategy*> robotStrategiesTeam,int
 
 btVector3 Simulator::calcRelativePosition(btVector3 absPos, int attackDir){
     float relX = absPos.getX();
-cout << attackDir;
     float relZ = absPos.getZ();
     if(attackDir == -1){
 
